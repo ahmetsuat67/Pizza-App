@@ -20,32 +20,69 @@
 /* base html codes */
 html {
   font-size: 62.5%;
-  overflow: hidden;
+  overflow-x: hidden;
   scroll-padding-top: 9rem;
   scroll-behavior: smooth;
 }
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: white;
+}
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
+html::-webkit-scrollbar-thumb {
+  border-radius: 3rem;
+  background-color: var(--black-color);
+}
 body {
   background-color: var(--main-color);
+}
+section {
+  padding: 3.5rem 7%; /* tüm section hizlaması */
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 2rem 3.75rem;
+  border-radius: 30rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background-color: var(--black-color);
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.9; /* geçiş efekti fare üzerine geldiği anlaşılsın */
+}
 
+.heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-bottom: 3.5rem;
+  border-bottom: 0.1rem solid #fff;
+}
+.heading span {
+  text-transform: uppercase;
+  color: var(--black-color);
 }
 /* header */
 .header .logo img {
   height: 10rem;
 }
 .header {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 7%;
-    margin: 2rem 7%;
-    border-radius: 30rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 7%;
+  margin: 2rem 7%;
+  border-radius: 30rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .header .navbar a {
   margin: 0 1rem;
@@ -55,12 +92,78 @@ body {
 }
 .header .navbar .active,
 .header .navbar a:hover {
-border-color: var(--main-color);
- padding-bottom: 0.5rem; /* geçiş efekti yavaşlığı */
+  border-color: var(--main-color);
+  padding-bottom: 0.5rem; /* geçiş efekti yavaşlığı */
 }
-.header .buttons button{
-    cursor: pointer;
-    font-size: 2.5rem;
-    margin-left: 2rem;
-    background-color: transparent;
+.header .buttons button {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  background-color: transparent;
+}
+/* header-end */
+
+/* home-section */
+.home {
+  min-height: 100vh; /* 100vh tarayıcıda görüldüğü yer kadar kaplamadır */
+  background: url(../images/home.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: -14.5rem;
+  display: flex;
+  align-items: center;
+}
+.home .content {
+  max-width: 60rem;
+}
+.home .content h3 {
+  font-size: 6rem;
+  color: white;
+}
+.home .content p {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #ccc;
+}
+/* menu */
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+.menu .box-container .box {
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 3rem;
+  min-height: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.menu .box-container .box img {
+  width: 100%;
+  object-fit: cover; /* resimlerin kendi boyutlarında kalmasını sağlar */
+}
+.menu .box-container .box .menu-category {
+  font-size: 1.2rem;
+  text-transform: lowercase;
+}
+.menu .box-container .box h3 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.menu .box-container .box .price {
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+.menu .box-container .box .price span {
+  font-size: 1.5rem;
+  color: #ccc;
+  text-decoration: line-through;
+  font-weight: 300;
 }
